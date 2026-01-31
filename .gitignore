@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Env / secrets
+.env
+
+# Logs (keep)
+*.log
+
+# Data (ignore CSV; keep images)
+*.csv
+
+# OS/editor
+.DS_Store
+*.swp
+commit -m Add plots ( set1-4 hist/series/box ) */summary.csv >> .gitignore*/all_summary.csv
