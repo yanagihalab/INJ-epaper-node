@@ -1,0 +1,2 @@
+trial,local_time,node_id,qr_id,unique_id,tx_ok,txhash,txhash_ms,display_ms,total_ms,broadcast_ms_node,height,code,gasWanted,gasUsed,timestamp_chain,value_len,error
+1,2026-01-31 15:10:52,node-t-8821,141ef90261954cb686a4a3149efeb153,a3ee67ab8686526e4e98c5d8d63b3316698844248a573a259194e8caf515c4ca,True,820C7DDEEDEB50838F0834ACF9CDE2FFB337EB277A84C98C05B65340184490DD,9753.987,4689.632,14443.618,3822.584,111337561,0,1200000,166566,2026-01-31T06:10:46Z,242,

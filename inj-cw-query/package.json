@@ -1,0 +1,16 @@
+{
+  "name": "inj-cw-query",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@cosmjs/cosmwasm-stargate": "^0.38.1",
+    "dotenv": "^17.2.3"
+  }
+}

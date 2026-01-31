@@ -1,0 +1,14 @@
+{
+  "name": "inj-cw-query",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@cosmjs/cosmwasm-stargate": "^0.37.0",
+    "@injectivelabs/networks": "^1.17.6",
+    "@injectivelabs/sdk-ts": "^1.17.6",
+    "dotenv": "^16.4.0"
+  },
+  "overrides": {
+    "@scure/base": "1.2.6"
+  }
+}
