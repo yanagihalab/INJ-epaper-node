@@ -1,0 +1,19 @@
+{
+  "tool": "raspi_outdoor_net_tool",
+  "mode": "derive-profile",
+  "timestamp_epoch": 1773551705.0123475,
+  "profile": {
+    "name": "derived-profile",
+    "base_rtt_ms": 51.964,
+    "jitter_ms": 14.569,
+    "uplink_kbps": 3651.845,
+    "downlink_kbps": 14607.379,
+    "loss_prob": 0.0,
+    "timeout_prob": 0.0,
+    "outage_prob_per_call": 0.001,
+    "outage_duration_min_s": 3.0,
+    "outage_duration_max_s": 10.0,
+    "seed": 42
+  },
+  "source_metrics": "out/metrics_rpc.json"
+}

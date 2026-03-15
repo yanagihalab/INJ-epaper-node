@@ -1,0 +1,102 @@
+{
+  "tool": "raspi_outdoor_net_tool",
+  "mode": "measure",
+  "timestamp_epoch": 1773551516.579486,
+  "hostname": "admin-y-FMVUH03003",
+  "ping": [
+    {
+      "kind": "ping",
+      "host": "1.1.1.1",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "20",
+        "-i",
+        "0.5",
+        "1.1.1.1"
+      ],
+      "command_str": "ping -n -c 20 -i 0.5 1.1.1.1",
+      "returncode": 0,
+      "transmitted": 20,
+      "received": 20,
+      "loss_percent": 0.0,
+      "rtt_min_ms": 40.121,
+      "rtt_avg_ms": 51.964,
+      "rtt_max_ms": 97.098,
+      "rtt_mdev_ms": 14.569,
+      "raw_excerpt": "seq=5 ttl=51 time=54.5 ms\n64 bytes from 1.1.1.1: icmp_seq=6 ttl=51 time=42.1 ms\n64 bytes from 1.1.1.1: icmp_seq=7 ttl=51 time=41.9 ms\n64 bytes from 1.1.1.1: icmp_seq=8 ttl=51 time=46.4 ms\n64 bytes from 1.1.1.1: icmp_seq=9 ttl=51 time=97.1 ms\n64 bytes from 1.1.1.1: icmp_seq=10 ttl=51 time=40.8 ms\n64 bytes from 1.1.1.1: icmp_seq=11 ttl=51 time=40.1 ms\n64 bytes from 1.1.1.1: icmp_seq=12 ttl=51 time=56.8 ms\n64 bytes from 1.1.1.1: icmp_seq=13 ttl=51 time=42.4 ms\n64 bytes from 1.1.1.1: icmp_seq=14 ttl=51 time=50.9 ms\n64 bytes from 1.1.1.1: icmp_seq=15 ttl=51 time=67.0 ms\n64 bytes from 1.1.1.1: icmp_seq=16 ttl=51 time=45.5 ms\n64 bytes from 1.1.1.1: icmp_seq=17 ttl=51 time=43.4 ms\n64 bytes from 1.1.1.1: icmp_seq=18 ttl=51 time=71.3 ms\n64 bytes from 1.1.1.1: icmp_seq=19 ttl=51 time=42.4 ms\n64 bytes from 1.1.1.1: icmp_seq=20 ttl=51 time=51.0 ms\n\n--- 1.1.1.1 ping statistics ---\n20 packets transmitted, 20 received, 0% packet loss, time 9513ms\nrtt min/avg/max/mdev = 40.121/51.964/97.098/14.569 ms\n\n"
+    }
+  ],
+  "http": [
+    {
+      "kind": "http",
+      "url": "https://injective-testnet-rpc.publicnode.com:443",
+      "method": "GET",
+      "runs": 20,
+      "success": 20,
+      "failures": 0,
+      "success_rate": 1.0,
+      "status_codes": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "header_latency": {
+        "count": 20,
+        "mean_ms": 608.47585,
+        "median_ms": 409.292,
+        "p95_ms": 1488.648,
+        "p99_ms": 1600.5352,
+        "min_ms": 347.545,
+        "max_ms": 1628.507
+      },
+      "total_latency": {
+        "count": 20,
+        "mean_ms": 805.845151,
+        "median_ms": 535.985281,
+        "p95_ms": 2007.591923,
+        "p99_ms": 2172.4752,
+        "min_ms": 471.211094,
+        "max_ms": 2213.696019
+      },
+      "body_size": {
+        "count": 20,
+        "mean_bytes": 1153579.05,
+        "median_bytes": 1153601.0,
+        "p95_bytes": 1153663.0,
+        "p99_bytes": 1153663.0,
+        "min_bytes": 1153523,
+        "max_bytes": 1153663
+      },
+      "goodput": {
+        "count": 20,
+        "mean_mbps": 14.607379,
+        "median_mbps": 17.218764,
+        "p95_mbps": 18.616776,
+        "p99_mbps": 19.391591,
+        "min_mbps": 4.168677,
+        "max_mbps": 19.585294
+      },
+      "errors": []
+    }
+  ],
+  "iperf": []
+}

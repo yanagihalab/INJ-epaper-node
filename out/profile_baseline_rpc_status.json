@@ -1,0 +1,13 @@
+{
+  "name": "baseline-rpc-status",
+  "base_rtt_ms": 61.359,
+  "jitter_ms": 22.215,
+  "uplink_kbps": 512.0,
+  "downlink_kbps": 2048.0,
+  "loss_prob": 0.0,
+  "timeout_prob": 0.0,
+  "outage_prob_per_call": 0.001,
+  "outage_duration_min_s": 3.0,
+  "outage_duration_max_s": 10.0,
+  "seed": 42
+}

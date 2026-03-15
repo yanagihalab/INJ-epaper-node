@@ -1,0 +1,2 @@
+base_rtt_ms,downlink_kbps,jitter_ms,loss_prob,name,outage_duration_max_s,outage_duration_min_s,outage_prob_per_call,seed,timeout_prob,uplink_kbps
+61.359,128.0,22.215,0.0,derived-profile,10.0,3.0,0.001,42,0.0,64.0

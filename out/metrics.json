@@ -1,0 +1,125 @@
+{
+  "tool": "raspi_outdoor_net_tool",
+  "mode": "measure",
+  "timestamp_epoch": 1773551365.4656074,
+  "hostname": "admin-y-FMVUH03003",
+  "ping": [
+    {
+      "kind": "ping",
+      "host": "1.1.1.1",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "20",
+        "-i",
+        "0.5",
+        "1.1.1.1"
+      ],
+      "command_str": "ping -n -c 20 -i 0.5 1.1.1.1",
+      "returncode": 0,
+      "transmitted": 20,
+      "received": 20,
+      "loss_percent": 0.0,
+      "rtt_min_ms": 43.319,
+      "rtt_avg_ms": 53.444,
+      "rtt_max_ms": 82.813,
+      "rtt_mdev_ms": 12.215,
+      "raw_excerpt": "seq=5 ttl=51 time=47.3 ms\n64 bytes from 1.1.1.1: icmp_seq=6 ttl=51 time=43.4 ms\n64 bytes from 1.1.1.1: icmp_seq=7 ttl=51 time=47.6 ms\n64 bytes from 1.1.1.1: icmp_seq=8 ttl=51 time=43.3 ms\n64 bytes from 1.1.1.1: icmp_seq=9 ttl=51 time=43.7 ms\n64 bytes from 1.1.1.1: icmp_seq=10 ttl=51 time=55.6 ms\n64 bytes from 1.1.1.1: icmp_seq=11 ttl=51 time=82.5 ms\n64 bytes from 1.1.1.1: icmp_seq=12 ttl=51 time=45.0 ms\n64 bytes from 1.1.1.1: icmp_seq=13 ttl=51 time=45.5 ms\n64 bytes from 1.1.1.1: icmp_seq=14 ttl=51 time=43.3 ms\n64 bytes from 1.1.1.1: icmp_seq=15 ttl=51 time=46.6 ms\n64 bytes from 1.1.1.1: icmp_seq=16 ttl=51 time=48.3 ms\n64 bytes from 1.1.1.1: icmp_seq=17 ttl=51 time=48.9 ms\n64 bytes from 1.1.1.1: icmp_seq=18 ttl=51 time=49.4 ms\n64 bytes from 1.1.1.1: icmp_seq=19 ttl=51 time=72.0 ms\n64 bytes from 1.1.1.1: icmp_seq=20 ttl=51 time=66.9 ms\n\n--- 1.1.1.1 ping statistics ---\n20 packets transmitted, 20 received, 0% packet loss, time 9517ms\nrtt min/avg/max/mdev = 43.319/53.444/82.813/12.215 ms\n\n"
+    },
+    {
+      "kind": "ping",
+      "host": "8.8.8.8",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "20",
+        "-i",
+        "0.5",
+        "8.8.8.8"
+      ],
+      "command_str": "ping -n -c 20 -i 0.5 8.8.8.8",
+      "returncode": 0,
+      "transmitted": 20,
+      "received": 20,
+      "loss_percent": 0.0,
+      "rtt_min_ms": 42.099,
+      "rtt_avg_ms": 54.729,
+      "rtt_max_ms": 110.788,
+      "rtt_mdev_ms": 14.766,
+      "raw_excerpt": "e=57.8 ms\n64 bytes from 8.8.8.8: icmp_seq=6 ttl=112 time=58.0 ms\n64 bytes from 8.8.8.8: icmp_seq=7 ttl=112 time=52.5 ms\n64 bytes from 8.8.8.8: icmp_seq=8 ttl=112 time=54.3 ms\n64 bytes from 8.8.8.8: icmp_seq=9 ttl=112 time=54.1 ms\n64 bytes from 8.8.8.8: icmp_seq=10 ttl=112 time=62.7 ms\n64 bytes from 8.8.8.8: icmp_seq=11 ttl=112 time=73.4 ms\n64 bytes from 8.8.8.8: icmp_seq=12 ttl=112 time=45.6 ms\n64 bytes from 8.8.8.8: icmp_seq=13 ttl=112 time=47.4 ms\n64 bytes from 8.8.8.8: icmp_seq=14 ttl=112 time=44.7 ms\n64 bytes from 8.8.8.8: icmp_seq=15 ttl=112 time=47.8 ms\n64 bytes from 8.8.8.8: icmp_seq=16 ttl=112 time=52.2 ms\n64 bytes from 8.8.8.8: icmp_seq=17 ttl=112 time=53.5 ms\n64 bytes from 8.8.8.8: icmp_seq=18 ttl=112 time=42.1 ms\n64 bytes from 8.8.8.8: icmp_seq=19 ttl=112 time=45.8 ms\n64 bytes from 8.8.8.8: icmp_seq=20 ttl=112 time=52.6 ms\n\n--- 8.8.8.8 ping statistics ---\n20 packets transmitted, 20 received, 0% packet loss, time 9510ms\nrtt min/avg/max/mdev = 42.099/54.729/110.788/14.766 ms\n\n"
+    }
+  ],
+  "http": [
+    {
+      "kind": "http",
+      "url": "https://httpbin.org/get",
+      "method": "GET",
+      "runs": 20,
+      "success": 20,
+      "failures": 0,
+      "success_rate": 1.0,
+      "status_codes": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "header_latency": {
+        "count": 20,
+        "mean_ms": 361.3748,
+        "median_ms": 253.5485,
+        "p95_ms": 764.72315,
+        "p99_ms": 1152.49263,
+        "min_ms": 219.244,
+        "max_ms": 1249.435
+      },
+      "total_latency": {
+        "count": 20,
+        "mean_ms": 362.217416,
+        "median_ms": 254.105855,
+        "p95_ms": 765.137096,
+        "p99_ms": 1153.431498,
+        "min_ms": 219.757861,
+        "max_ms": 1250.505099
+      },
+      "body_size": {
+        "count": 20,
+        "mean_bytes": 305,
+        "median_bytes": 305.0,
+        "p95_bytes": 305.0,
+        "p99_bytes": 305.0,
+        "min_bytes": 305,
+        "max_bytes": 305
+      },
+      "goodput": {
+        "count": 20,
+        "mean_mbps": 0.008361,
+        "median_mbps": 0.009602,
+        "p95_mbps": 0.010704,
+        "p99_mbps": 0.011023,
+        "min_mbps": 0.001951,
+        "max_mbps": 0.011103
+      },
+      "errors": []
+    }
+  ],
+  "iperf": []
+}

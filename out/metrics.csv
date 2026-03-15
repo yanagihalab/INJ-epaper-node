@@ -1,0 +1,4 @@
+failures,goodput_mean_mbps,header_mean_ms,header_p95_ms,loss_percent,returncode,rtt_avg_ms,rtt_max_ms,rtt_mdev_ms,rtt_min_ms,runs,section,success,success_rate,target,total_mean_ms,total_p95_ms
+,,,,0.0,0,53.444,82.813,12.215,43.319,,ping,,,1.1.1.1,,
+,,,,0.0,0,54.729,110.788,14.766,42.099,,ping,,,8.8.8.8,,
+0,0.008361,361.3748,764.72315,,,,,,,20,http,20,1.0,https://httpbin.org/get,362.217416,765.137096

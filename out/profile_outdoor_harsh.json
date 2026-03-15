@@ -1,0 +1,13 @@
+{
+  "name": "outdoor-harsh",
+  "base_rtt_ms": 220.0,
+  "jitter_ms": 90.0,
+  "uplink_kbps": 128.0,
+  "downlink_kbps": 512.0,
+  "loss_prob": 0.03,
+  "timeout_prob": 0.05,
+  "outage_prob_per_call": 0.03,
+  "outage_duration_min_s": 8.0,
+  "outage_duration_max_s": 25.0,
+  "seed": 42
+}

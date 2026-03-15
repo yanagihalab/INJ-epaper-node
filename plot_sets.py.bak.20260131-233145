@@ -53,19 +53,6 @@ def summarize(vals: list[float]) -> dict[str, float]:
     }
 
 
-def metric_xlabel(metric: str) -> str:
-    """
-    X-axis label used in histograms (and y-label used in timeseries/boxplots).
-    """
-    if metric == "txhash_ms":
-        return "txhash_ms (ms): payload生成開始→Tx送信でtxhash取得まで"
-    if metric == "display_ms":
-        return "display_ms (ms): txhash取得→e-paper表示(epd.display完了)まで"
-    if metric == "total_ms":
-        return "total_ms (ms): payload生成開始→e-paper表示完了まで"
-    return f"{metric} (ms)"
-
-
 def read_csv_numeric(csv_path: Path, col: str) -> list[float]:
     out: list[float] = []
     with csv_path.open("r", encoding="utf-8", newline="") as f:
@@ -95,42 +82,23 @@ def read_csv_series(csv_path: Path, col: str, xcol: str = "trial") -> tuple[list
     return xs, ys
 
 
-def plot_hist(
-    vals: list[float],
-    title: str | None,
-    xlabel: str,
-    out_png: Path,
-    bins: int,
-    *,
-    xlabel_fs: int = 12,
-    ylabel_fs: int = 12,
-    tick_fs: int = 10,
-) -> None:
+def plot_hist(vals: list[float], title: str, xlabel: str, out_png: Path, bins: int) -> None:
     plt.figure()
     plt.hist(vals, bins=bins)
-    if title:
-        plt.title(title)
-    plt.xlabel(xlabel, fontsize=xlabel_fs)
-    plt.ylabel("count", fontsize=ylabel_fs)
-    plt.tick_params(axis="both", labelsize=tick_fs)
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel("count")
     plt.tight_layout()
     out_png.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(out_png, dpi=200)
     plt.close()
 
 
-def plot_box(
-    data: list[list[float]],
-    labels: list[str],
-    title: str,
-    xlabel: str,
-    ylabel: str,
-    out_png: Path,
-) -> None:
+def plot_box(data: list[list[float]], labels: list[str], title: str, ylabel: str, out_png: Path) -> None:
     plt.figure()
-    plt.boxplot(data, tick_labels=labels, showfliers=True)  # matplotlib>=3.9
+    # matplotlib >=3.9: tick_labels が推奨
+    plt.boxplot(data, tick_labels=labels, showfliers=True)
     plt.title(title)
-    plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.tight_layout()
     out_png.parent.mkdir(parents=True, exist_ok=True)
@@ -138,14 +106,7 @@ def plot_box(
     plt.close()
 
 
-def plot_series(
-    xs: list[float],
-    ys: list[float],
-    title: str,
-    xlabel: str,
-    ylabel: str,
-    out_png: Path,
-) -> None:
+def plot_series(xs: list[float], ys: list[float], title: str, xlabel: str, ylabel: str, out_png: Path) -> None:
     plt.figure()
     plt.plot(xs, ys)
     plt.title(title)
@@ -166,11 +127,6 @@ def main() -> None:
     ap.add_argument("--no_box", action="store_true", help="Disable boxplot output")
     ap.add_argument("--no_series", action="store_true", help="Disable timeseries plot output")
     ap.add_argument("--no_all", action="store_true", help="Disable aggregated(all-sets) histogram output")
-
-    # ALLSET only: smaller default than before
-    ap.add_argument("--all_xlabel_fs", type=int, default=16, help="ALLSET xlabel fontsize (default: 16)")
-    ap.add_argument("--all_ylabel_fs", type=int, default=16, help="ALLSET ylabel fontsize (default: 16)")
-    ap.add_argument("--all_tick_fs", type=int, default=12, help="ALLSET tick fontsize (default: 12)")
     args = ap.parse_args()
 
     indir = Path(args.indir).expanduser().resolve()
@@ -196,19 +152,15 @@ def main() -> None:
 
         for m in metrics:
             vals = read_csv_numeric(csv_path, m)
+
+            # 集約（全セット統合）
             all_vals[m].extend(vals)
 
             stat = summarize(vals)
             summary_rows.append({"set": label, "metric": m, **stat})
 
             out_png = outdir / f"{label}_hist_{m}.png"
-            plot_hist(
-                vals,
-                title=f"{label} {m} histogram (n={stat.get('n',0)})",
-                xlabel=metric_xlabel(m),
-                out_png=out_png,
-                bins=args.bins,
-            )
+            plot_hist(vals, f"{label} {m} histogram (n={stat.get('n',0)})", f"{m} (ms)", out_png, args.bins)
             print(f"[✓] wrote: {out_png}")
 
             box_data[m].append(vals)
@@ -216,47 +168,31 @@ def main() -> None:
             if not args.no_series:
                 xs, ys = read_csv_series(csv_path, m, "trial")
                 out_png2 = outdir / f"{label}_series_{m}.png"
-                plot_series(
-                    xs,
-                    ys,
-                    title=f"{label} {m} timeseries",
-                    xlabel="trial (1..N within this set)",
-                    ylabel=metric_xlabel(m),
-                    out_png=out_png2,
-                )
+                plot_series(xs, ys, f"{label} {m} timeseries", "trial", f"{m} (ms)", out_png2)
                 print(f"[✓] wrote: {out_png2}")
 
+    # boxplots across sets
     if not args.no_box:
         for m in metrics:
             out_png = outdir / f"box_{m}_by_set.png"
-            plot_box(
-                box_data[m],
-                box_labels,
-                title=f"{m} by set (boxplot)",
-                xlabel="set (qr_tx_log_setX)",
-                ylabel=metric_xlabel(m),
-                out_png=out_png,
-            )
+            plot_box(box_data[m], box_labels, f"{m} by set (boxplot)", f"{m} (ms)", out_png)
             print(f"[✓] wrote: {out_png}")
 
-    # ---- ALLSET aggregated histograms: NO TITLE, SMALLER LABELS ----
+    # aggregated(all sets) histograms
     if not args.no_all:
         for m in metrics:
             stat = summarize(all_vals[m])
             out_png = outdir / f"all_hist_{m}.png"
             plot_hist(
                 all_vals[m],
-                title=None,  # タイトル無し
-                xlabel=metric_xlabel(m),
-                out_png=out_png,
-                bins=args.bins,
-                xlabel_fs=args.all_xlabel_fs,
-                ylabel_fs=args.all_ylabel_fs,
-                tick_fs=args.all_tick_fs,
+                f"ALL SETS {m} histogram (n={stat.get('n',0)})",
+                f"{m} (ms)",
+                out_png,
+                args.bins,
             )
             print(f"[✓] wrote: {out_png}")
 
-    # summary.csv (per set)
+    # write summary.csv
     summary_csv = outdir / "summary.csv"
     with summary_csv.open("w", encoding="utf-8", newline="") as f:
         fieldnames = ["set", "metric", "n", "min", "p50", "p95", "max", "mean", "median"]
@@ -266,7 +202,7 @@ def main() -> None:
             w.writerow({k: row.get(k, "") for k in fieldnames})
     print(f"[✓] wrote: {summary_csv}")
 
-    # all_summary.csv (aggregated)
+    # write all_summary.csv
     if not args.no_all:
         all_summary_csv = outdir / "all_summary.csv"
         with all_summary_csv.open("w", encoding="utf-8", newline="") as f:

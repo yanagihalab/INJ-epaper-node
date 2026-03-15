@@ -1,0 +1,3 @@
+failures,goodput_mean_mbps,header_mean_ms,header_p95_ms,loss_percent,returncode,rtt_avg_ms,rtt_max_ms,rtt_mdev_ms,rtt_min_ms,runs,section,success,success_rate,target,total_mean_ms,total_p95_ms
+,,,,0.0,0,51.964,97.098,14.569,40.121,,ping,,,1.1.1.1,,
+0,14.607379,608.47585,1488.648,,,,,,,20,http,20,1.0,https://injective-testnet-rpc.publicnode.com:443,805.845151,2007.591923

@@ -1,0 +1,13 @@
+{
+  "name": "outdoor-moderate",
+  "base_rtt_ms": 140.0,
+  "jitter_ms": 55.0,
+  "uplink_kbps": 256.0,
+  "downlink_kbps": 1024.0,
+  "loss_prob": 0.01,
+  "timeout_prob": 0.02,
+  "outage_prob_per_call": 0.01,
+  "outage_duration_min_s": 5.0,
+  "outage_duration_max_s": 15.0,
+  "seed": 42
+}
