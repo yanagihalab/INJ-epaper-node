@@ -1,0 +1,27 @@
+INFO:root:SPEC LOOP: payload -> tx (txhash) -> display -> csv (Ctrl+C to stop)
+INFO:root:GPIOZERO_PIN_FACTORY=lgpio
+INFO:root:SEND_FULL_PAYLOAD=1 INCLUDE_TXHASH_IN_QR=1
+INFO:root:NODE_SEND_TIMEOUT_SEC=60.0
+INFO:root:NET_EMULATION=1 profile=outdoor-outage-heavy source=name:outdoor-outage-heavy rtt_ms=140.000 jitter_ms=55.000 up_kbps=256.0 down_kbps=1024.0 loss=0.0100 timeout=0.0200 outage_prob=0.0100 seed=42
+INFO:root:[1] ok=True txhash_ms=11356.281 display_ms=4701.184 total_ms=16057.465 txhash=F4F78F4BA5 error_type=- net_stage=- pre_ms=101.346 post_ms=76.436
+INFO:root:[2] ok=False txhash_ms=59026.993 display_ms=4680.285 total_ms=63707.278 txhash=- error_type=EmulatedTimeout net_stage=post pre_ms=88.701 post_ms=65.633
+INFO:root:[3] ok=True txhash_ms=11636.522 display_ms=4697.565 total_ms=16334.087 txhash=A5D9BDFC6D error_type=- net_stage=- pre_ms=73.188 post_ms=72.77
+INFO:root:[4] ok=False txhash_ms=11191.624 display_ms=4676.949 total_ms=15868.574 txhash=- error_type=EmulatedNetworkError net_stage=post pre_ms=86.337 post_ms=109.023
+INFO:root:[5] ok=True txhash_ms=11405.516 display_ms=4759.392 total_ms=16164.908 txhash=1147F1FFF1 error_type=- net_stage=- pre_ms=71.534 post_ms=49.216
+INFO:root:[6] ok=True txhash_ms=11786.989 display_ms=4747.142 total_ms=16534.131 txhash=78B951476F error_type=- net_stage=- pre_ms=89.919 post_ms=79.81
+INFO:root:[7] ok=True txhash_ms=11752.955 display_ms=4706.997 total_ms=16459.952 txhash=632417362E error_type=- net_stage=- pre_ms=75.233 post_ms=39.17
+INFO:root:[8] ok=True txhash_ms=11162.691 display_ms=4690.224 total_ms=15852.915 txhash=D6DABB9816 error_type=- net_stage=- pre_ms=97.83 post_ms=39.46
+INFO:root:[9] ok=True txhash_ms=11539.909 display_ms=4694.738 total_ms=16234.647 txhash=02B5D77AD3 error_type=- net_stage=- pre_ms=98.527 post_ms=78.601
+INFO:root:[10] ok=True txhash_ms=11830.631 display_ms=4707.169 total_ms=16537.800 txhash=9FDE545F80 error_type=- net_stage=- pre_ms=97.436 post_ms=86.143
+INFO:root:[11] ok=True txhash_ms=11470.132 display_ms=4696.819 total_ms=16166.951 txhash=08A843ECDB error_type=- net_stage=- pre_ms=85.018 post_ms=93.96
+INFO:root:[12] ok=True txhash_ms=11595.976 display_ms=4694.581 total_ms=16290.557 txhash=AF354B785F error_type=- net_stage=- pre_ms=100.696 post_ms=112.085
+INFO:root:[13] ok=True txhash_ms=11263.569 display_ms=4749.501 total_ms=16013.070 txhash=B5809F840C error_type=- net_stage=- pre_ms=57.195 post_ms=45.947
+INFO:root:[14] ok=True txhash_ms=11511.481 display_ms=4692.970 total_ms=16204.451 txhash=9F9E09D048 error_type=- net_stage=- pre_ms=80.485 post_ms=79.948
+INFO:root:[15] ok=True txhash_ms=12285.439 display_ms=4696.102 total_ms=16981.542 txhash=18B07418C4 error_type=- net_stage=- pre_ms=132.213 post_ms=53.244
+INFO:root:[16] ok=True txhash_ms=11309.005 display_ms=4727.650 total_ms=16036.654 txhash=07742987D3 error_type=- net_stage=- pre_ms=105.75 post_ms=57.396
+INFO:root:[17] ok=True txhash_ms=11874.445 display_ms=4692.593 total_ms=16567.038 txhash=323DF36B86 error_type=- net_stage=- pre_ms=76.647 post_ms=109.319
+INFO:root:[18] ok=True txhash_ms=11144.503 display_ms=4694.756 total_ms=15839.259 txhash=17D15AFEA3 error_type=- net_stage=- pre_ms=112.384 post_ms=72.477
+INFO:root:[19] ok=True txhash_ms=11287.867 display_ms=4698.046 total_ms=15985.913 txhash=6435C2062B error_type=- net_stage=- pre_ms=45.632 post_ms=37.987
+INFO:root:[20] ok=True txhash_ms=11753.023 display_ms=4694.911 total_ms=16447.934 txhash=E62D1CDC11 error_type=- net_stage=- pre_ms=113.303 post_ms=72.162
+INFO:root:[21] ok=True txhash_ms=11253.678 display_ms=4699.572 total_ms=15953.250 txhash=F0CA77B9BA error_type=- net_stage=- pre_ms=71.951 post_ms=32.075
+INFO:root:[22] ok=True txhash_ms=11615.606 display_ms=4745.360 total_ms=16360.966 txhash=033E6B59CE error_type=- net_stage=- pre_ms=102.013 post_ms=91.929

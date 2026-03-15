@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 source .venv/bin/activate
 
 # ===== 設定（必要ならここだけ編集）=====
-REPEATS_PER_PROFILE="${REPEATS_PER_PROFILE:-5}"
+REPEATS_PER_PROFILE="${REPEATS_PER_PROFILE:-3}"
 N_TRIALS="${N_TRIALS:-100}"
 
 # 1試行の表示維持秒（txhash取得後に表示）

@@ -1,0 +1,8 @@
+INFO:root:SPEC LOOP: payload -> tx (txhash) -> display -> csv (Ctrl+C to stop)
+INFO:root:GPIOZERO_PIN_FACTORY=lgpio
+INFO:root:SEND_FULL_PAYLOAD=1 INCLUDE_TXHASH_IN_QR=1
+INFO:root:NODE_SEND_TIMEOUT_SEC=60.0
+INFO:root:NET_EMULATION=1 profile=baseline source=name:baseline rtt_ms=61.359 jitter_ms=22.215 up_kbps=512.0 down_kbps=2048.0 loss=0.0000 timeout=0.0000 outage_prob=0.0010 seed=42
+INFO:root:[1] ok=True txhash_ms=10910.560 display_ms=4746.977 total_ms=15657.538 txhash=34D81916BD error_type=- net_stage=- pre_ms=44.259 post_ms=33.566
+INFO:root:[2] ok=True txhash_ms=10859.395 display_ms=4742.886 total_ms=15602.281 txhash=112BBCDCBB error_type=- net_stage=- pre_ms=39.152 post_ms=29.202
+INFO:root:[3] ok=True txhash_ms=11541.659 display_ms=4731.701 total_ms=16273.360 txhash=4F45F776A0 error_type=- net_stage=- pre_ms=32.886 post_ms=32.081
